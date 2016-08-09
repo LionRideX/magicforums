@@ -1,0 +1,28 @@
+.post-index{
+
+.features-container{
+  margin: 50px 0;
+}
+.parent {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 50px auto;
+  justify-content: center;
+  border-style: groove;
+  border-color: red;
+  border-width: 10px;
+}
+
+
+.child {
+  flex: 0 0 1122px;
+  margin: 30px 10px;
+  border-style: ridge;
+  border-color: red;
+  border-width: 5px;
+}
+
+
+
+}

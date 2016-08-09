@@ -1,0 +1,26 @@
+.landing{
+  .about-avengers {
+          background-image: url("avengers 2nd picture.jpg");
+          height: calc(100vh - 52px);
+          width: 100%;
+          background-position: 50% 50%;
+          background-repeat: no-repeat;
+          background-size: cover;
+          display: flex;
+          justify-content: center;
+          position: relative; top: 0; left: 0;
+        }
+.ii{
+  background-image: url("ii.jpg");
+  height: calc(128vh - 380px);
+  width: 30%;
+  background-position: 20% 20%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  position: absolute; top: 128px; left: 454px;
+}
+
+
+}
