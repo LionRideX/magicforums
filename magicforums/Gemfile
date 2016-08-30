@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0'
 # Use postgresql as the database for Active Record
-gem 'pg', '>= 0.19.0.beta'
+gem 'pg'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
@@ -29,9 +29,35 @@ gem 'mini_magick', '~> 3.5.0'
 # Use ActiveModel has_secure_password
 gem 'carrierwave'
 # gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt'
 
+gem 'figaro'
+
+gem 'pundit'
+
+gem 'rubocop'
+
+gem 'responders'
 # Use Capistrano for deployment
+gem 'kaminari'
 # gem 'capistrano-rails', group: :development
+gem 'redis', '~>3.2'
+
+gem 'friendly_id', github: 'norman/friendly_id'
+
+group :development, :test do
+  gem 'rspec-rails', '~> 3.5'
+  gem 'factory_girl_rails'
+  gem 'faker'
+end
+
+group :test do
+  gem 'database_cleaner'
+  gem 'shoulda-matchers'
+  gem 'rails-controller-testing'
+  gem 'capybara'
+  gem 'selenium-webdriver'
+end
 
 
 group :development, :test do
@@ -41,6 +67,7 @@ end
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console'
+  gem 'letter_opener'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

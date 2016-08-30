@@ -1,20 +1,21 @@
 <div class="post-index">
 
-<h1>Posts</h1>
-<%= link_to "NEW", new_topic_post_path, class: "btn btn-success  btn-lg"%>
-<div class="parent" >
-<% @posts.each do |post| %>
-  <div class = "child">
-    <%= link_to topic_posts_path(post) do %>
+    <h1>Posts</h1>
+    <%= link_to "NEW", new_topic_post_path(@topic, @post), class: "btn btn-success  btn-lg"%>
+    <div class="parent">
+        <% @posts.each do |post| %>
+        <div class="child">
+            <%= link_to topic_post_comments_path(@topic, post) do %>
 
-    <h3><%= post.title %></h3>
-    <h5><%= post.body %></h5>
-<% end %>
-<div class="post">
-    <%= link_to "EDIT", edit_topic_post_path(@topic,post), class: "btn btn-success  btn-lg"%>
-  </div>
-</div>
-<% end %>
+            <h3><%= post.title %></h3>
+            <h5><%= post.body %></h5>
+            <% end %>
+            <div class="post">
+                <%= link_to "EDIT", edit_topic_post_path(@topic,post), class: "btn btn-success  btn-lg"%>
+                <%= link_to "Delete", topic_post_path(@topic,post), method: :delete, data: { confirm: "Delete?" }, class: "btn btn-success  btn-lg" %>
+            </div>
+        </div>
+        <% end %>
 
-</div>
+    </div>
 </div>

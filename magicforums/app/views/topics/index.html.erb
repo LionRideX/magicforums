@@ -1,17 +1,18 @@
 <h1>Topics</h1>
 <%= link_to "NEW", new_topic_path(@topic), class: "btn btn-success  btn-lg"%>
-<div class="parent" >
-<% @topics.each do |topic| %>
-  <div class = "child">
-    <%= link_to topic_posts_path(topic) do%>
+<div class="parent">
+    <% @topics.each do |topic| %>
+    <div class="child">
+        <%= link_to topic_posts_path(topic) do%>
 
-    <h3><%= topic.title %></h3>
-    <h5><%= topic.description %></h5>
+        <h3><%= topic.title %></h3>
+        <h5><%= topic.description %></h5>
+        <% end %>
+        <div class="topic">
+            <%= link_to "EDIT", edit_topic_path(topic), class: "btn btn-success  btn-lg"%>
+            <%= link_to "Delete", topic_path(topic), method: :delete, data: { confirm: "Delete?" }, class: "btn btn-success  btn-lg" %>
+        </div>
+    </div>
     <% end %>
-<div class="topic">
-    <%= link_to "EDIT", edit_topic_path(topic), class: "btn btn-success  btn-lg"%>
-  </div>
-</div>
-<% end %>
 
 </div>

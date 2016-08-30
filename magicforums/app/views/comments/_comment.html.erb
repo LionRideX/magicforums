@@ -1,0 +1,27 @@
+<div id="comment_<%=comment.id%>">
+    <div class="comment">
+        <div class="child">
+
+            <h5><%= comment.body %></h5>
+
+            <div class="comment2">
+                <% if comment.user == current_user || current_user&.admin? || current_user&.moderator? %>
+                <%= link_to "EDIT", edit_topic_post_comment_path(comment.post.topic, comment.post, comment), remote: true, class: "btn btn-success  btn-lg"%>
+                <%= link_to "Delete", topic_post_comment_path(comment.post.topic, comment.post, comment),authenticity_token: true, remote: true, method: :delete, data: { confirm: "Delete?" }, class: "btn btn-success  btn-lg" %>
+                <% end %>
+            </div>
+        </div>
+    </div>
+    <div class="voting-panel">
+        <span>Score:</span>
+        <span class="voting-score"><%= comment.total_votes %></span>
+
+        <% if current_user %>
+          <div class="voting-controls">
+            <%= link_to "Upvote", upvote_path({ comment_id: comment.id }), method: :post, remote: true %>
+            <span> / </span>
+            <%= link_to "Downvote", downvote_path({ comment_id: comment.id }), method: :post, remote: true %>
+          </div>
+        <% end %>
+    </div>
+</div>
